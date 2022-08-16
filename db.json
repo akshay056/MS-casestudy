@@ -1,0 +1,120 @@
+{
+  "cart": [
+    {
+      "product": {
+        "id": 1,
+        "name": "Van-Heusen Shirt",
+        "category": "Clothes",
+        "description": "Cotton : Size-42 : Blue color : Full Sleeve",
+        "price": 1200,
+        "imageFile": "https://i5.walmartimages.com/asr/8238e55a-6309-4335-927d-8f2c2e688676_1.6896fe6cd7e40259f198360ba7ec3075.jpeg"
+      },
+      "id": 1
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Van-Heusen Shirt",
+        "category": "Clothes",
+        "description": "Cotton : Size-42 : Blue color : Full Sleeve",
+        "price": 1200,
+        "imageFile": "https://i5.walmartimages.com/asr/8238e55a-6309-4335-927d-8f2c2e688676_1.6896fe6cd7e40259f198360ba7ec3075.jpeg"
+      },
+      "id": 2
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Van-Heusen Shirt",
+        "category": "Clothes",
+        "description": "Cotton : Size-42 : Blue color : Full Sleeve",
+        "price": 1200,
+        "imageFile": "https://i5.walmartimages.com/asr/8238e55a-6309-4335-927d-8f2c2e688676_1.6896fe6cd7e40259f198360ba7ec3075.jpeg"
+      },
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Van-Heusen Shirt",
+        "category": "Clothes",
+        "description": "Cotton : Size-42 : Blue color : Full Sleeve",
+        "price": 1200,
+        "imageFile": "https://i5.walmartimages.com/asr/8238e55a-6309-4335-927d-8f2c2e688676_1.6896fe6cd7e40259f198360ba7ec3075.jpeg"
+      },
+      "id": 4
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Van-Heusen Shirt",
+        "category": "Clothes",
+        "description": "Cotton : Size-42 : Blue color : Full Sleeve",
+        "price": 1200,
+        "imageFile": "https://i5.walmartimages.com/asr/8238e55a-6309-4335-927d-8f2c2e688676_1.6896fe6cd7e40259f198360ba7ec3075.jpeg"
+      },
+      "id": 5
+    },
+    {
+      "product": {
+        "id": 2,
+        "name": "Levi Denims",
+        "category": "Clothes",
+        "description": "Cotton : Size-36 : Blue color : Slim Fit",
+        "price": 1800,
+        "imageFile": "https://cdna.lystit.com/photos/macys/9798c70e/levis-Disaster-Mens-511tm-Slim-fit-Cropped-Raw-hem-Jeans.jpeg"
+      },
+      "id": 6
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Milton Water Bottle",
+        "category": "Kitchen",
+        "description": "Copper body : 500ml : Thermos ",
+        "price": 800,
+        "imageFile": "https://ii1.pepperfry.com/media/catalog/product/m/i/1600x1760/milton-copper-vertex-thermosteel-750-ml-water-bottle-with-tumbler-milton-copper-vertex-thermosteel-7-yy3hsu.jpg"
+      },
+      "id": 7
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Milton Water Bottle",
+        "category": "Kitchen",
+        "description": "Copper body : 500ml : Thermos ",
+        "price": 800,
+        "imageFile": "https://ii1.pepperfry.com/media/catalog/product/m/i/1600x1760/milton-copper-vertex-thermosteel-750-ml-water-bottle-with-tumbler-milton-copper-vertex-thermosteel-7-yy3hsu.jpg"
+      },
+      "id": 8
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Milton Water Bottle",
+        "category": "Kitchen",
+        "description": "Copper body : 500ml : Thermos ",
+        "price": 800,
+        "imageFile": "https://ii1.pepperfry.com/media/catalog/product/m/i/1600x1760/milton-copper-vertex-thermosteel-750-ml-water-bottle-with-tumbler-milton-copper-vertex-thermosteel-7-yy3hsu.jpg"
+      },
+      "id": 9
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

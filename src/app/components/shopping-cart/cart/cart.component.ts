@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart} from 'src/app/models/cart';
-
+import { MessengerService } from 'src/app/services/messenger.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -15,14 +14,13 @@ export class CartComponent implements OnInit {
   cartTotal = 0;
 
   constructor(
+    public msg: MessengerService,
     private cartService: CartService
   ) { }
 
   ngOnInit() {
     this.loadCartItems();
   }
-
-
   loadCartItems() {
     this.cartService.getCartItems().subscribe((items: Cart[]) => {
       this.cartItems = items;

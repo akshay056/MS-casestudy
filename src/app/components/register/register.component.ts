@@ -1,44 +1,69 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
-import { NgForm } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
+/**
+ *
+ * @param form
+ */
+
+function passwordsMatchValidator(form: { get: (arg0: string) => any; }) {
+  const password = form.get('password')
+  const confirmPassword = form.get('confirmPassword')
+
+  if(password.value !== confirmPassword.value) {
+    confirmPassword.setErrors({ passwordsMatch: true })
+  } else {
+    confirmPassword.setErrors(null)
+  }
+
+  return null
+}
+
+/**
+ * If the data is valid return null else return an object
+ */
+function symbolValidator(control: { hasError: (arg0: string) => any; value: string | string[]; }) { //control = registerForm.get('password')
+  if(control.hasError('required')) return null;
+  if(control.hasError('minlength')) return null;
+
+  if(control.value.indexOf('@') > -1) {
+    return null
+  } else {
+    return { symbol: true }
+  }
+}
 
 @Component({
-  selector: 'app-sign-up',
+  selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user!: User;
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  submitted = false;
+  registerForm!: FormGroup;
 
-  constructor(private userService: UserService) { }
+  constructor(private builder: FormBuilder) { }
 
   ngOnInit() {
-    this.resetForm();
+    this.buildForm()
   }
 
-  resetForm(form?: NgForm) {
-    if (form != null)
-      form.reset();
-    this.user = {
-      username: '',
-      password: '',
-      email: '',
-      firstName: '',
-      lastName: ''
-    }
+  buildForm() {
+    this.registerForm = this.builder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, symbolValidator, Validators.minLength(4)]],
+      confirmPassword: ''
+    }, {
+      validators: passwordsMatchValidator
+    })
   }
 
-  OnSubmit(form: NgForm) {
-    this.userService.registerUser(form.value)
-      .subscribe((data: any) => {
-        if (data.Succeeded == true) {
-          this.resetForm(form);
-        }
-      
-      });
+  register() {
+    this.submitted = true;
+
+    console.log(this.registerForm.value)
   }
 
 }

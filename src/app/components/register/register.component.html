@@ -1,43 +1,78 @@
 <div class="row">
-    <div class="col-md-4 offset-md-4">
-      <div class="guest-form-card card">
-  
-        <div class="card-header text-center">
-          <h2>User Registraton</h2>
-        </div>
-        <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
-          <div class="row">
-            <div class="input-field col s6">
-              <input class="validate" type="text" name="UserName" #UserName="ngModel" [(ngModel)]="user.username" required>
-              <label data-error="Required field!">UserName</label>
-            </div>
-            <div class="input-field col s6">
-              <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.password" required  minlength="3">
-              <label data-error="Required field!">Password</label>
-            </div>
+  <div class="col-md-4 offset-md-4">
+    <div class="guest-form-card card">
+
+      <div class="card-header text-center">
+        <h2>Register Here</h2>
+      </div>
+
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              class="form-control"
+              formControlName="name">
+            <span class="invalid-feedback">Name can't be blank.</span>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.email" [pattern]="emailPattern">
-              <label data-error="Invalid email!">Email</label>
-            </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('email')">Email can't be blank.</span>
+              <span *ngIf="registerForm.get('email')">Email must be valid.</span>
+            </span>
           </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.firstName">
-              <label>First Name</label>
-            </div>
-            <div class="input-field col s6">
-              <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.lastName">
-              <label>Last Name</label>
-            </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && registerForm.get('password')}"
+              formControlName="username"
+            />
+            <span class="invalid-feedback">Username can't be blank.</span>
           </div>
-          <div class="row">
-              <div class="input-field col s12">
-                <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
-              </div>
-            </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && registerForm.get('password') }"
+              formControlName="password"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="registerForm.get('password')">Password can't be blank.</span>
+              <span *ngIf="registerForm.get('password')">Password must contain @</span>
+              <span *ngIf="registerForm.get('password')">Password must contain minimum 4 characters</span>
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && registerForm.get('confirmPassword') }"
+              formControlName="confirmPassword"
+            />
+            <span class="invalid-feedback">Passwords must match.</span>
+          </div>
+
+          <button class="btn btn-primary btn-block" [disabled]="registerForm.invalid">Register</button>
         </form>
       </div>
     </div>
   </div>
+</div>

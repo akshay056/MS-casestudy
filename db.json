@@ -98,6 +98,28 @@
         "imageFile": "https://ii1.pepperfry.com/media/catalog/product/m/i/1600x1760/milton-copper-vertex-thermosteel-750-ml-water-bottle-with-tumbler-milton-copper-vertex-thermosteel-7-yy3hsu.jpg"
       },
       "id": 9
+    },
+    {
+      "product": {
+        "id": 1,
+        "name": "Van-Heusen Shirt",
+        "category": "Clothes",
+        "description": "Cotton : Size-42 : Blue color : Full Sleeve",
+        "price": 1200,
+        "imageFile": "https://i5.walmartimages.com/asr/8238e55a-6309-4335-927d-8f2c2e688676_1.6896fe6cd7e40259f198360ba7ec3075.jpeg"
+      },
+      "id": 10
+    },
+    {
+      "product": {
+        "id": 5,
+        "name": "Titan Digital Watch",
+        "category": "Electronics",
+        "description": "Android: Radium dial : Fiber band ",
+        "price": 2500,
+        "imageFile": "https://staticimg.titan.co.in/Titan/Catalog/90056NL01_1.jpg"
+      },
+      "id": 11
     }
   ],
   "posts": [
